@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spectrum | Impressões 3D</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #FAF9F6;
+            color: #334155;
+        }
+        
+        /* Chart Container Requirements */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        .tab-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn.active {
+            background-color: #3B82F6;
+            color: white;
+            border-color: #3B82F6;
+        }
+
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .step-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased scroll-smooth">
+
+    <!-- Chosen Palette: Warm Neutrals & Calming Blues (Background: #FAF9F6 Off-white, Primary: #3B82F6 Blue, Accent: #8B5CF6 Violet, Text: #334155 Slate) -->
+    <!-- Application Structure Plan: The SPA is structured as a storytelling landing page. It flows from the emotional core (Hero & Purpose) to the educational (What is 3D printing), then the practical (Products/Portfolio), and finally the concrete impact (Chart showing fund allocation). This non-linear exploration allows users to understand the "Why" before the "What", creating a stronger connection to the brand and its mission to help Cauã. Interactive tabs and step-by-step processes keep the user engaged without overwhelming them with text. -->
+    <!-- Visualization & Content Choices: 
+         1. The Purpose: Interactive text reveal to show the direct link between the business and Cauã's TEA support.
+         2. Technology Education: Step-by-step interactive cards replacing complex diagrams, explaining 3D printing simply.
+         3. Portfolio: Interactive filtering grid to organize diverse products (Sensory, Corporate, Decor) using CSS styling and emojis instead of SVG/images.
+         4. Impact Data: Chart.js Doughnut chart to visually communicate transparency regarding where the funds go, building trust. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <nav class="sticky top-0 z-50 bg-[#FAF9F6]/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <span class="text-3xl">🖨️</span>
+                    <span class="font-bold text-xl tracking-tight text-slate-800">Spectrum <span class="text-blue-500">3D</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#proposito" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Nosso Propósito</a>
+                    <a href="#tecnologia" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">A Tecnologia</a>
+                    <a href="#produtos" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">O que Fazemos</a>
+                    <a href="#assistente-ia" class="text-blue-600 hover:text-blue-800 font-bold transition-colors flex items-center gap-1">Ideias <span>✨</span></a>
+                    <a href="#impacto" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">O Impacto</a>
+                </div>
+                <a href="https://www.instagram.com/spectrum_impressoes3d" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full font-semibold transition-all shadow-md hover:shadow-lg text-sm">
+                    Siga no Instagram 📱
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="pt-20 pb-16 md:pt-32 md:pb-24 px-4 overflow-hidden relative">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-50 to-purple-50 -z-10 opacity-70"></div>
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-4 border border-blue-200">
+                    Tecnologia com Alma 💖
+                </span>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    Materializando ideias, <br/>
+                    <span class="gradient-text">transformando vidas.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Bem-vindo à Spectrum. Produzimos itens personalizados em impressão 3D com um propósito maior: apoiar o desenvolvimento do Cauã e espalhar conscientização.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button onclick="document.getElementById('produtos').scrollIntoView()" class="bg-slate-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-slate-700 transition-colors shadow-lg">
+                        Ver Produtos 📦
+                    </button>
+                    <button onclick="document.getElementById('proposito').scrollIntoView()" class="bg-white border-2 border-slate-200 text-slate-700 px-8 py-3 rounded-full font-semibold hover:border-blue-300 hover:bg-blue-50 transition-all shadow-sm">
+                        Conheça o Cauã 🧩
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="proposito" class="py-16 md:py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 text-center md:text-left">
+                    <h2 class="text-3xl font-bold text-slate-800 mb-4">O Coração da Spectrum</h2>
+                    <p class="text-slate-600 max-w-3xl text-lg">Esta seção explica a essência do nosso negócio. Não somos apenas uma loja, somos uma rede de apoio viabilizada pela tecnologia.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="bg-blue-50 p-8 rounded-3xl border border-blue-100 relative shadow-sm">
+                        <div class="text-6xl mb-4 text-center">👦🏻🧩</div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4 text-center">Pelo Cauã</h3>
+                        <p class="text-slate-700 leading-relaxed mb-6">
+                            Parte da renda de cada peça produzida pela Spectrum é destinada a auxiliar no tratamento do Cauã, um menino incrível diagnosticado com Transtorno do Espectro Autista (TEA) nível de suporte 2. 
+                        </p>
+                        <button id="toggle-autism-info" class="w-full bg-white border border-blue-200 text-blue-700 py-2 rounded-xl font-medium hover:bg-blue-100 transition-colors">
+                            Como a impressão 3D ajuda no TEA? 👇
+                        </button>
+                        <div id="autism-extra-info" class="hidden mt-4 p-4 bg-white rounded-xl border border-blue-100 text-sm text-slate-600 leading-relaxed">
+                            Muitas pessoas no espectro possuem necessidades sensoriais específicas. A impressão 3D nos permite criar brinquedos (fidget toys) com texturas customizadas, ferramentas de regulação emocional e materiais de apoio visual que são caros ou difíceis de encontrar no mercado tradicional. Ao comprar conosco, você ajuda a custear as terapias essenciais dele.
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start">
+                            <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center text-2xl shrink-0">🤝</div>
+                            <div>
+                                <h4 class="font-bold text-xl text-slate-800">Personalização Empática</h4>
+                                <p class="text-slate-600 mt-1">Criamos produtos que se adaptam às necessidades do cliente, não o contrário.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center text-2xl shrink-0">🌱</div>
+                            <div>
+                                <h4 class="font-bold text-xl text-slate-800">Impacto Direto</h4>
+                                <p class="text-slate-600 mt-1">Sua compra tem um destino transparente e um impacto imediato na qualidade de vida de uma criança.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tecnologia" class="py-16 md:py-24 bg-slate-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 text-center">
+                    <h2 class="text-3xl font-bold text-slate-800 mb-4">A Magia da Impressão 3D</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto text-lg">Entenda como transformamos arquivos digitais em objetos físicos, camada por milimétrica camada. Explore o processo abaixo.</p>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 md:p-10 shadow-sm border border-slate-100">
+                    <div class="flex flex-col md:flex-row justify-between mb-8 gap-4 border-b border-slate-100 pb-6">
+                        <button class="tech-step-btn flex-1 py-3 px-4 rounded-xl text-center font-bold bg-blue-100 text-blue-700 transition-colors" data-step="1">
+                            1. Modelagem 💻
+                        </button>
+                        <button class="tech-step-btn flex-1 py-3 px-4 rounded-xl text-center font-bold bg-slate-100 text-slate-500 hover:bg-slate-200 transition-colors" data-step="2">
+                            2. Fatiamento 🍰
+                        </button>
+                        <button class="tech-step-btn flex-1 py-3 px-4 rounded-xl text-center font-bold bg-slate-100 text-slate-500 hover:bg-slate-200 transition-colors" data-step="3">
+                            3. Impressão 🪄
+                        </button>
+                    </div>
+
+                    <div id="step-1" class="step-content active text-center py-4">
+                        <div class="text-7xl mb-6">📐</div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-3">O Design Digital</h3>
+                        <p class="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
+                            Tudo começa com uma ideia. Utilizando softwares de desenho 3D, criamos um modelo digital do objeto. Seja a logo de uma empresa, um personagem de RPG ou uma engrenagem sensorial, este é o momento de definir proporções e detalhes.
+                        </p>
+                    </div>
+                    
+                    <div id="step-2" class="step-content text-center py-4">
+                        <div class="text-7xl mb-6">⚙️</div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-3">Preparando as Camadas</h3>
+                        <p class="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
+                            O modelo 3D passa por um software "fatiador" (slicer). Ele literalmente corta o objeto digital em centenas de camadas horizontais finíssimas e gera um código matemático dizendo à impressora exatamente por onde se mover e quanto material soltar.
+                        </p>
+                    </div>
+
+                    <div id="step-3" class="step-content text-center py-4">
+                        <div class="text-7xl mb-6">🤖</div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-3">Materializando</h3>
+                        <p class="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
+                            A impressora aquece um filamento de plástico biodegradável (como o PLA) até ele derreter. O bico extrusor desenha a primeira camada na base. Quando esfria e endurece, a impressora sobe uma fração de milímetro e faz a próxima camada, até o objeto estar completo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="produtos" class="py-16 md:py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 text-center">
+                    <h2 class="text-3xl font-bold text-slate-800 mb-4">Nosso Portfólio</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto text-lg">Explore as categorias do que produzimos. Utilize os filtros para encontrar exatamente o tipo de solução personalizada que você procura.</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="flex flex-wrap justify-center gap-3 mb-10">
+                    <button class="filter-btn active px-6 py-2 rounded-full border-2 border-slate-200 bg-slate-800 text-white font-medium" data-filter="all">Todos</button>
+                    <button class="filter-btn px-6 py-2 rounded-full border-2 border-slate-200 text-slate-600 hover:border-blue-400 font-medium transition-colors" data-filter="sensory">Brinquedos Sensoriais</button>
+                    <button class="filter-btn px-6 py-2 rounded-full border-2 border-slate-200 text-slate-600 hover:border-blue-400 font-medium transition-colors" data-filter="corporate">Empresarial</button>
+                    <button class="filter-btn px-6 py-2 rounded-full border-2 border-slate-200 text-slate-600 hover:border-blue-400 font-medium transition-colors" data-filter="decor">Decoração & Arte</button>
+                </div>
+
+                <!-- Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+                    
+                    <!-- Item 1: Sensory -->
+                    <div class="product-card bg-slate-50 rounded-2xl p-6 border border-slate-100 flex flex-col items-center text-center item" data-category="sensory">
+                        <div class="w-32 h-32 rounded-full bg-teal-100 flex items-center justify-center text-5xl mb-6 border-4 border-white shadow-inner">
+                            🌀
+                        </div>
+                        <h4 class="font-bold text-xl text-slate-800 mb-2">Fidget Spinners Texturizados</h4>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">Brinquedos de mão silenciosos com texturas variadas nas pontas. Ideais para foco e regulação sensorial (stimming).</p>
+                        <span class="text-xs font-bold text-teal-700 bg-teal-100 px-3 py-1 rounded-full">Sensorial</span>
+                    </div>
+
+                    <!-- Item 2: Corporate -->
+                    <div class="product-card bg-slate-50 rounded-2xl p-6 border border-slate-100 flex flex-col items-center text-center item" data-category="corporate">
+                        <div class="w-32 h-32 rounded-full bg-blue-100 flex items-center justify-center text-5xl mb-6 border-4 border-white shadow-inner">
+                            🏢
+                        </div>
+                        <h4 class="font-bold text-xl text-slate-800 mb-2">Logotipos 3D de Mesa</h4>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">A marca da sua empresa materializada. Letreiros em 3D para recepções, mesas de escritório e stands em eventos.</p>
+                        <span class="text-xs font-bold text-blue-700 bg-blue-100 px-3 py-1 rounded-full">Empresarial</span>
+                    </div>
+
+                    <!-- Item 3: Decor -->
+                    <div class="product-card bg-slate-50 rounded-2xl p-6 border border-slate-100 flex flex-col items-center text-center item" data-category="decor">
+                        <div class="w-32 h-32 rounded-full bg-orange-100 flex items-center justify-center text-5xl mb-6 border-4 border-white shadow-inner">
+                            🗿
+                        </div>
+                        <h4 class="font-bold text-xl text-slate-800 mb-2">Esculturas Low-Poly</h4>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">Arte geométrica moderna. Animais, vasos e itens de cultura pop estilizados para decorar ambientes de forma única.</p>
+                        <span class="text-xs font-bold text-orange-700 bg-orange-100 px-3 py-1 rounded-full">Decoração</span>
+                    </div>
+
+                    <!-- Item 4: Sensory -->
+                    <div class="product-card bg-slate-50 rounded-2xl p-6 border border-slate-100 flex flex-col items-center text-center item" data-category="sensory">
+                        <div class="w-32 h-32 rounded-full bg-teal-100 flex items-center justify-center text-5xl mb-6 border-4 border-white shadow-inner">
+                            🧊
+                        </div>
+                        <h4 class="font-bold text-xl text-slate-800 mb-2">Cubos de Encaixe Infinito</h4>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">Cubos articulados que nunca param de dobrar. Excelentes para alívio de ansiedade e ocupação motora.</p>
+                        <span class="text-xs font-bold text-teal-700 bg-teal-100 px-3 py-1 rounded-full">Sensorial</span>
+                    </div>
+
+                    <!-- Item 5: Corporate -->
+                    <div class="product-card bg-slate-50 rounded-2xl p-6 border border-slate-100 flex flex-col items-center text-center item" data-category="corporate">
+                        <div class="w-32 h-32 rounded-full bg-blue-100 flex items-center justify-center text-5xl mb-6 border-4 border-white shadow-inner">
+                            🎁
+                        </div>
+                        <h4 class="font-bold text-xl text-slate-800 mb-2">Brindes Customizados</h4>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">Chaveiros, porta-copos e suportes de celular com a marca da sua empresa impressa. Brindes que não vão para a gaveta.</p>
+                        <span class="text-xs font-bold text-blue-700 bg-blue-100 px-3 py-1 rounded-full">Empresarial</span>
+                    </div>
+
+                     <!-- Item 6: Decor -->
+                     <div class="product-card bg-slate-50 rounded-2xl p-6 border border-slate-100 flex flex-col items-center text-center item" data-category="decor">
+                        <div class="w-32 h-32 rounded-full bg-orange-100 flex items-center justify-center text-5xl mb-6 border-4 border-white shadow-inner">
+                            🪴
+                        </div>
+                        <h4 class="font-bold text-xl text-slate-800 mb-2">Vasos Geométricos</h4>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">Vasos para suculentas e plantas pequenas com designs exclusivos que você não encontra em lojas convencionais.</p>
+                        <span class="text-xs font-bold text-orange-700 bg-orange-100 px-3 py-1 rounded-full">Decoração</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de IA Adicionada -->
+        <section id="assistente-ia" class="py-16 md:py-24 bg-blue-50 relative overflow-hidden">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-blue-100 text-center">
+                    <div class="inline-block p-4 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl text-4xl mb-6 shadow-inner">✨</div>
+                    <h2 class="text-3xl font-bold text-slate-800 mb-4">Laboratório de Ideias Inclusivas</h2>
+                    <p class="text-slate-600 mb-8 text-lg max-w-2xl mx-auto">Não encontrou o que procurava? Descreva os interesses e necessidades sensoriais de quem você quer presentear, e nossa IA desenhará um conceito de brinquedo 3D personalizado!</p>
+                    
+                    <div class="max-w-2xl mx-auto text-left bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                        <label for="ia-input" class="block text-sm font-bold text-slate-700 mb-2">Quais são os gostos e necessidades? (Ex: gosta de planetas, texturas ásperas, coisas que giram...)</label>
+                        <textarea id="ia-input" rows="3" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:ring-0 focus:border-blue-500 outline-none transition-all resize-none mb-4" placeholder="Digite aqui..."></textarea>
+                        
+                        <button id="btn-gerar-ideia" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-4 px-6 rounded-xl shadow-md hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all flex justify-center items-center gap-3 transform hover:-translate-y-1">
+                            <span class="text-lg">Gerar Ideia Personalizada ✨</span>
+                            <svg id="ia-loading" class="animate-spin h-6 w-6 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                        </button>
+                        
+                        <div id="ia-result-container" class="mt-8 p-6 bg-blue-50/50 border border-blue-100 rounded-xl hidden">
+                            <h4 class="font-bold text-xl text-blue-900 mb-4 flex items-center gap-2">💡 Nossa Sugestão 3D:</h4>
+                            <div id="ia-result-text" class="text-slate-700 space-y-3 leading-relaxed"></div>
+                            <div class="mt-6 pt-4 border-t border-blue-200 text-center">
+                                <p class="text-sm text-slate-600 mb-3 font-medium">Gostou da ideia? Mande uma mensagem para criarmos juntos!</p>
+                                <a href="https://www.instagram.com/spectrum_impressoes3d" target="_blank" class="inline-block bg-slate-800 text-white px-6 py-2 rounded-lg text-sm font-bold hover:bg-slate-700 transition-colors">Falar no Instagram 📱</a>
+                            </div>
+                        </div>
+                        <div id="ia-error" class="mt-4 p-4 bg-red-50 text-red-700 border border-red-200 rounded-xl hidden text-sm font-medium">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="impacto" class="py-16 md:py-24 bg-slate-800 text-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 text-center">
+                    <span class="text-blue-400 font-bold tracking-wider uppercase text-sm">Transparência</span>
+                    <h2 class="text-3xl font-bold mt-2 mb-4">Onde seu apoio faz a diferença</h2>
+                    <p class="text-slate-300 max-w-2xl mx-auto text-lg">Nesta seção, visualizamos o impacto direto das vendas. A proporção abaixo ilustra como a receita destinada ao Cauã é aplicada em seu desenvolvimento contínuo.</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-12 items-center bg-slate-700/50 p-8 rounded-3xl border border-slate-600">
+                    <div class="w-full md:w-1/2">
+                        <div class="chart-container">
+                            <canvas id="impactChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 space-y-6">
+                        <h3 class="text-2xl font-bold border-b border-slate-600 pb-3">Destinação do Fundo de Apoio</h3>
+                        
+                        <div class="flex items-center gap-4">
+                            <div class="w-4 h-4 rounded-full bg-[#3B82F6]"></div>
+                            <div>
+                                <h4 class="font-bold text-lg">Terapias Especializadas (50%)</h4>
+                                <p class="text-sm text-slate-300">Sessões semanais com fonoaudiólogos, terapeutas ocupacionais e psicólogos comportamentais essenciais para o suporte Nível 2.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <div class="w-4 h-4 rounded-full bg-[#10B981]"></div>
+                            <div>
+                                <h4 class="font-bold text-lg">Materiais de Apoio & Escolar (30%)</h4>
+                                <p class="text-sm text-slate-300">Recursos visuais, comunicadores alternativos, adaptações escolares e mobiliário focado em integração sensorial.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-4 h-4 rounded-full bg-[#8B5CF6]"></div>
+                            <div>
+                                <h4 class="font-bold text-lg">Fundo de Reserva (20%)</h4>
+                                <p class="text-sm text-slate-300">Poupança para futuras necessidades médicas, consultas de rotina com neuropediatras ou imprevistos do dia a dia.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-6 border-t border-slate-600 text-center md:text-left">
+                            <p class="text-lg italic font-light">"Cada camada impressa é um tijolo construindo a independência dele. Obrigado."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl">🖨️</span>
+                <span class="font-bold text-xl tracking-tight text-white">Spectrum <span class="text-blue-500">3D</span></span>
+            </div>
+            
+            <p class="text-sm text-center md:text-left">
+                Impresso com amor. Desenvolvido para inspirar.<br>
+                Apoiando ativamente a causa TEA.
+            </p>
+
+            <div class="flex gap-4">
+                <a href="https://www.instagram.com/spectrum_impressoes3d" target="_blank" class="hover:text-white transition-colors flex items-center gap-2 bg-slate-800 px-4 py-2 rounded-lg">
+                    <span>📱</span> Instagram Oficial
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Toggle Purpose Info
+            const toggleBtn = document.getElementById('toggle-autism-info');
+            const infoBox = document.getElementById('autism-extra-info');
+            
+            toggleBtn.addEventListener('click', () => {
+                if (infoBox.classList.contains('hidden')) {
+                    infoBox.classList.remove('hidden');
+                    toggleBtn.innerHTML = 'Ocultar detalhes 👆';
+                    toggleBtn.classList.replace('bg-white', 'bg-blue-100');
+                } else {
+                    infoBox.classList.add('hidden');
+                    toggleBtn.innerHTML = 'Como a impressão 3D ajuda no TEA? 👇';
+                    toggleBtn.classList.replace('bg-blue-100', 'bg-white');
+                }
+            });
+
+            // 2. Interactive Tech Steps
+            const stepBtns = document.querySelectorAll('.tech-step-btn');
+            const stepContents = document.querySelectorAll('.step-content');
+
+            stepBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Reset all buttons
+                    stepBtns.forEach(b => {
+                        b.classList.remove('bg-blue-100', 'text-blue-700');
+                        b.classList.add('bg-slate-100', 'text-slate-500');
+                    });
+                    
+                    // Activate clicked button
+                    btn.classList.remove('bg-slate-100', 'text-slate-500');
+                    btn.classList.add('bg-blue-100', 'text-blue-700');
+
+                    // Show corresponding content
+                    const stepId = btn.getAttribute('data-step');
+                    stepContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    document.getElementById(`step-${stepId}`).classList.add('active');
+                });
+            });
+
+            // 3. Portfolio Filtering
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const items = document.querySelectorAll('.item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button styling
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-slate-800', 'text-white');
+                        b.classList.add('text-slate-600', 'bg-transparent');
+                    });
+                    btn.classList.remove('text-slate-600', 'bg-transparent');
+                    btn.classList.add('bg-slate-800', 'text-white');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    items.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'flex';
+                            // Small timeout to allow display:flex to apply before opacity for smooth transition if needed
+                            setTimeout(() => item.style.opacity = '1', 50);
+                        } else {
+                            item.style.opacity = '0';
+                            setTimeout(() => item.style.display = 'none', 300);
+                        }
+                    });
+                });
+            });
+
+            // 4. Chart.js Implementation for Impact Section
+            const ctx = document.getElementById('impactChart').getContext('2d');
+            
+            // Dummy data based on the narrative
+            const chartData = {
+                labels: ['Terapias', 'Materiais/Escola', 'Reserva'],
+                datasets: [{
+                    data: [50, 30, 20],
+                    backgroundColor: [
+                        '#3B82F6', // Blue
+                        '#10B981', // Emerald/Green
+                        '#8B5CF6'  // Violet
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 10
+                }]
+            };
+
+            const impactChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: chartData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            display: false // Using custom HTML legend next to it
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                            titleFont: { size: 14, family: 'Nunito' },
+                            bodyFont: { size: 14, family: 'Nunito' },
+                            padding: 12,
+                            callbacks: {
+                                label: function(context) {
+                                    return ' ' + context.label + ': ' + context.raw + '% do fundo';
+                                }
+                            }
+                        }
+                    },
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true
+                    }
+                }
+            });
+
+            // 5. Integração com Gemini API - Laboratório de Ideias Inclusivas
+            const apiEndpoint = '/api/gerar-ideia';
+            const btnGerarIdeia = document.getElementById('btn-gerar-ideia');
+            const iaInput = document.getElementById('ia-input');
+            const iaLoading = document.getElementById('ia-loading');
+            const iaResultContainer = document.getElementById('ia-result-container');
+            const iaResultText = document.getElementById('ia-result-text');
+            const iaError = document.getElementById('ia-error');
+
+            const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+            const fetchWithRetry = async (url, options, retries = 5) => {
+                let delay = 1000;
+                for (let i = 0; i < retries; i++) {
+                    try {
+                        const response = await fetch(url, options);
+                        if (!response.ok) {
+                            const errorText = await response.text();
+                            throw new Error(`Erro HTTP! status: ${response.status} ${errorText}`);
+                        }
+                        return await response.json();
+                    } catch (error) {
+                        if (i === retries - 1) throw error;
+                        await sleep(delay);
+                        delay *= 2;
+                    }
+                }
+            };
+
+            btnGerarIdeia.addEventListener('click', async () => {
+                const userInterests = iaInput.value.trim();
+                if (!userInterests) return;
+
+                // Atualizar UI para estado de carregamento
+                btnGerarIdeia.disabled = true;
+                btnGerarIdeia.classList.add('opacity-80', 'cursor-not-allowed');
+                iaLoading.classList.remove('hidden');
+                iaResultContainer.classList.add('hidden');
+                iaError.classList.add('hidden');
+
+                try {
+                    const data = await fetchWithRetry(
+                        apiEndpoint,
+                        {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ userInterests })
+                        }
+                    );
+
+                    const textResponse = data?.html;
+                    
+                    if (textResponse) {
+                        iaResultText.innerHTML = textResponse;
+                        iaResultContainer.classList.remove('hidden');
+                    } else {
+                        throw new Error("Resposta inválida da IA.");
+                    }
+                } catch (error) {
+                    iaError.textContent = "Desculpe, ocorreu um erro ao gerar a ideia. Nossa IA deve estar descansando. Tente novamente em alguns segundos!";
+                    iaError.classList.remove('hidden');
+                } finally {
+                    btnGerarIdeia.disabled = false;
+                    btnGerarIdeia.classList.remove('opacity-80', 'cursor-not-allowed');
+                    iaLoading.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
