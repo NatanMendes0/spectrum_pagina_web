@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spectrum | Impressões 3D</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -81,13 +82,13 @@
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
                     <span class="text-3xl">🖨️</span>
-                    <span class="font-bold text-xl tracking-tight text-slate-800">Spectrum <span class="text-blue-500">3D</span></span>
+                    <span class="font-bold text-xl tracking-tight text-slate-800">Spectrum Impressões <span class="text-blue-500">3D</span></span>
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#proposito" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Nosso Propósito</a>
                     <a href="#tecnologia" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">A Tecnologia</a>
                     <a href="#produtos" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">O que Fazemos</a>
-                    <a href="#assistente-ia" class="text-blue-600 hover:text-blue-800 font-bold transition-colors flex items-center gap-1">Ideias <span>✨</span></a>
+                    <!-- <a href="#assistente-ia" class="text-blue-600 hover:text-blue-800 font-bold transition-colors flex items-center gap-1">Ideias <span>✨</span></a> -->
                     <a href="#impacto" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">O Impacto</a>
                 </div>
                 <a href="https://www.instagram.com/spectrum_impressoes3d" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full font-semibold transition-all shadow-md hover:shadow-lg text-sm">
@@ -113,7 +114,7 @@
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <button onclick="document.getElementById('produtos').scrollIntoView()" class="bg-slate-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-slate-700 transition-colors shadow-lg">
-                        Ver Produtos 📦
+                        Veja nossas categorias de peças feitas 📦
                     </button>
                     <button onclick="document.getElementById('proposito').scrollIntoView()" class="bg-white border-2 border-slate-200 text-slate-700 px-8 py-3 rounded-full font-semibold hover:border-blue-300 hover:bg-blue-50 transition-all shadow-sm">
                         Conheça o Cauã 🧩
@@ -214,16 +215,17 @@
         <section id="produtos" class="py-16 md:py-24 bg-white">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center">
-                    <h2 class="text-3xl font-bold text-slate-800 mb-4">Nosso Portfólio</h2>
-                    <p class="text-slate-600 max-w-2xl mx-auto text-lg">Explore as categorias do que produzimos. Utilize os filtros para encontrar exatamente o tipo de solução personalizada que você procura.</p>
+                    <h2 class="text-3xl font-bold text-slate-800 mb-4">O que Podemos Criar</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto text-lg">Conheça as categorias de projetos que desenvolvemos sob encomenda. Use os filtros para visualizar o tipo de solução que melhor se encaixa no que você precisa.</p>
+                    <p class="text-slate-500 max-w-2xl mx-auto text-sm mt-3">Trabalhamos somente com PLA e PETG. Não utilizamos TPU nem outros tipos de filamentos.</p>
                 </div>
 
                 <!-- Filters -->
                 <div class="flex flex-wrap justify-center gap-3 mb-10">
-                    <button class="filter-btn active px-6 py-2 rounded-full border-2 border-slate-200 bg-slate-800 text-white font-medium" data-filter="all">Todos</button>
-                    <button class="filter-btn px-6 py-2 rounded-full border-2 border-slate-200 text-slate-600 hover:border-blue-400 font-medium transition-colors" data-filter="sensory">Brinquedos Sensoriais</button>
+                    <button class="filter-btn active px-6 py-2 rounded-full border-2 border-slate-200 bg-slate-800 text-white font-medium" data-filter="all">Todas as categorias</button>
+                    <button class="filter-btn px-6 py-2 rounded-full border-2 border-slate-200 text-slate-600 hover:border-blue-400 font-medium transition-colors" data-filter="sensory">Sensorial & Educativo</button>
                     <button class="filter-btn px-6 py-2 rounded-full border-2 border-slate-200 text-slate-600 hover:border-blue-400 font-medium transition-colors" data-filter="corporate">Empresarial</button>
-                    <button class="filter-btn px-6 py-2 rounded-full border-2 border-slate-200 text-slate-600 hover:border-blue-400 font-medium transition-colors" data-filter="decor">Decoração & Arte</button>
+                    <button class="filter-btn px-6 py-2 rounded-full border-2 border-slate-200 text-slate-600 hover:border-blue-400 font-medium transition-colors" data-filter="decor">Decoração & Presentes</button>
                 </div>
 
                 <!-- Grid -->
@@ -234,8 +236,8 @@
                         <div class="w-32 h-32 rounded-full bg-teal-100 flex items-center justify-center text-5xl mb-6 border-4 border-white shadow-inner">
                             🌀
                         </div>
-                        <h4 class="font-bold text-xl text-slate-800 mb-2">Fidget Spinners Texturizados</h4>
-                        <p class="text-slate-600 text-sm mb-4 flex-grow">Brinquedos de mão silenciosos com texturas variadas nas pontas. Ideais para foco e regulação sensorial (stimming).</p>
+                        <h4 class="font-bold text-xl text-slate-800 mb-2">Fidgets e Peças Táteis</h4>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">Projetos pensados para foco e regulação sensorial, com diferentes texturas, formas e movimentos.</p>
                         <span class="text-xs font-bold text-teal-700 bg-teal-100 px-3 py-1 rounded-full">Sensorial</span>
                     </div>
 
@@ -244,8 +246,8 @@
                         <div class="w-32 h-32 rounded-full bg-blue-100 flex items-center justify-center text-5xl mb-6 border-4 border-white shadow-inner">
                             🏢
                         </div>
-                        <h4 class="font-bold text-xl text-slate-800 mb-2">Logotipos 3D de Mesa</h4>
-                        <p class="text-slate-600 text-sm mb-4 flex-grow">A marca da sua empresa materializada. Letreiros em 3D para recepções, mesas de escritório e stands em eventos.</p>
+                        <h4 class="font-bold text-xl text-slate-800 mb-2">Identidade de Marca</h4>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">Logotipos, letreiros e peças de apresentação para recepções, eventos e espaços corporativos.</p>
                         <span class="text-xs font-bold text-blue-700 bg-blue-100 px-3 py-1 rounded-full">Empresarial</span>
                     </div>
 
@@ -254,8 +256,8 @@
                         <div class="w-32 h-32 rounded-full bg-orange-100 flex items-center justify-center text-5xl mb-6 border-4 border-white shadow-inner">
                             🗿
                         </div>
-                        <h4 class="font-bold text-xl text-slate-800 mb-2">Esculturas Low-Poly</h4>
-                        <p class="text-slate-600 text-sm mb-4 flex-grow">Arte geométrica moderna. Animais, vasos e itens de cultura pop estilizados para decorar ambientes de forma única.</p>
+                        <h4 class="font-bold text-xl text-slate-800 mb-2">Esculturas e Arte</h4>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">Peças decorativas, personagens e itens temáticos com acabamento moderno e design autoral.</p>
                         <span class="text-xs font-bold text-orange-700 bg-orange-100 px-3 py-1 rounded-full">Decoração</span>
                     </div>
 
@@ -264,8 +266,8 @@
                         <div class="w-32 h-32 rounded-full bg-teal-100 flex items-center justify-center text-5xl mb-6 border-4 border-white shadow-inner">
                             🧊
                         </div>
-                        <h4 class="font-bold text-xl text-slate-800 mb-2">Cubos de Encaixe Infinito</h4>
-                        <p class="text-slate-600 text-sm mb-4 flex-grow">Cubos articulados que nunca param de dobrar. Excelentes para alívio de ansiedade e ocupação motora.</p>
+                        <h4 class="font-bold text-xl text-slate-800 mb-2">Jogos de Encaixe e Motricidade</h4>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">Peças articuladas e brinquedos educativos para coordenação motora fina e estímulo cognitivo.</p>
                         <span class="text-xs font-bold text-teal-700 bg-teal-100 px-3 py-1 rounded-full">Sensorial</span>
                     </div>
 
@@ -274,8 +276,8 @@
                         <div class="w-32 h-32 rounded-full bg-blue-100 flex items-center justify-center text-5xl mb-6 border-4 border-white shadow-inner">
                             🎁
                         </div>
-                        <h4 class="font-bold text-xl text-slate-800 mb-2">Brindes Customizados</h4>
-                        <p class="text-slate-600 text-sm mb-4 flex-grow">Chaveiros, porta-copos e suportes de celular com a marca da sua empresa impressa. Brindes que não vão para a gaveta.</p>
+                        <h4 class="font-bold text-xl text-slate-800 mb-2">Brindes e Utilitários</h4>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">Chaveiros, suportes e itens funcionais com personalização sob medida para eventos e equipes.</p>
                         <span class="text-xs font-bold text-blue-700 bg-blue-100 px-3 py-1 rounded-full">Empresarial</span>
                     </div>
 
@@ -284,8 +286,8 @@
                         <div class="w-32 h-32 rounded-full bg-orange-100 flex items-center justify-center text-5xl mb-6 border-4 border-white shadow-inner">
                             🪴
                         </div>
-                        <h4 class="font-bold text-xl text-slate-800 mb-2">Vasos Geométricos</h4>
-                        <p class="text-slate-600 text-sm mb-4 flex-grow">Vasos para suculentas e plantas pequenas com designs exclusivos que você não encontra em lojas convencionais.</p>
+                        <h4 class="font-bold text-xl text-slate-800 mb-2">Vasos e Acessórios</h4>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">Peças de decoração e presentes personalizados para casas, escritórios e datas especiais.</p>
                         <span class="text-xs font-bold text-orange-700 bg-orange-100 px-3 py-1 rounded-full">Decoração</span>
                     </div>
 
@@ -293,8 +295,8 @@
             </div>
         </section>
 
-        <!-- Seção de IA Adicionada -->
-        <section id="assistente-ia" class="py-16 md:py-24 bg-blue-50 relative overflow-hidden">
+        <!-- TODO: Melhorar Seção de IA Adicionada -->
+        <!-- <section id="assistente-ia" class="py-16 md:py-24 bg-blue-50 relative overflow-hidden">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-blue-100 text-center">
                     <div class="inline-block p-4 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl text-4xl mb-6 shadow-inner">✨</div>
@@ -313,7 +315,7 @@
                         <div id="ia-result-container" class="mt-8 p-6 bg-blue-50/50 border border-blue-100 rounded-xl hidden">
                             <h4 class="font-bold text-xl text-blue-900 mb-4 flex items-center gap-2">💡 Nossa Sugestão 3D:</h4>
                             <div id="ia-result-text" class="text-slate-700 space-y-3 leading-relaxed"></div>
-                            <div class="mt-6 pt-4 border-t border-blue-200 text-center">
+                            <div class="mt-6 pt-4 border-t border-blue-200 text-center md:text-left">
                                 <p class="text-sm text-slate-600 mb-3 font-medium">Gostou da ideia? Mande uma mensagem para criarmos juntos!</p>
                                 <a href="https://www.instagram.com/spectrum_impressoes3d" target="_blank" class="inline-block bg-slate-800 text-white px-6 py-2 rounded-lg text-sm font-bold hover:bg-slate-700 transition-colors">Falar no Instagram 📱</a>
                             </div>
@@ -323,7 +325,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <section id="impacto" class="py-16 md:py-24 bg-slate-800 text-white">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -346,7 +348,7 @@
                             <div class="w-4 h-4 rounded-full bg-[#3B82F6]"></div>
                             <div>
                                 <h4 class="font-bold text-lg">Terapias Especializadas (50%)</h4>
-                                <p class="text-sm text-slate-300">Sessões semanais com fonoaudiólogos, terapeutas ocupacionais e psicólogos comportamentais essenciais para o suporte Nível 2.</p>
+                                <p class="text-sm text-slate-300">Sessões com fonoaudiólogos, terapeutas ocupacionais e psicólogos comportamentais essenciais para o suporte Nível 2.</p>
                             </div>
                         </div>
                         
@@ -380,7 +382,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
                 <span class="text-2xl">🖨️</span>
-                <span class="font-bold text-xl tracking-tight text-white">Spectrum <span class="text-blue-500">3D</span></span>
+                <span class="font-bold text-xl tracking-tight text-white">Spectrum Impressões <span class="text-blue-500">3D</span></span>
             </div>
             
             <p class="text-sm text-center md:text-left">
