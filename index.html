@@ -64,9 +64,171 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        .icon {
+            display: inline-block;
+            vertical-align: -0.125em;
+        }
     </style>
 </head>
 <body class="antialiased scroll-smooth">
+
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden;">
+        <symbol id="icon-heart" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 21s-7.2-4.7-9.3-7.2C1 12.1 1 10.5 1 9a5 5 0 0 1 9-3.1A5 5 0 0 1 23 9c0 1.5-.1 3.1-1.7 4.8C19 16.3 12 21 12 21z"/>
+        </symbol>
+        <symbol id="icon-phone" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12,9.52A2.48,2.48,0,1,0,14.48,12,2.48,2.48,0,0,0,12,9.52Zm9.93-2.45a6.53,6.53,0,0,0-.42-2.26,4,4,0,0,0-2.32-2.32,6.53,6.53,0,0,0-2.26-.42C15.64,2,15.26,2,12,2s-3.64,0-4.93.07a6.53,6.53,0,0,0-2.26.42A4,4,0,0,0,2.49,4.81a6.53,6.53,0,0,0-.42,2.26C2,8.36,2,8.74,2,12s0,3.64.07,4.93a6.86,6.86,0,0,0,.42,2.27,3.94,3.94,0,0,0,.91,1.4,3.89,3.89,0,0,0,1.41.91,6.53,6.53,0,0,0,2.26.42C8.36,22,8.74,22,12,22s3.64,0,4.93-.07a6.53,6.53,0,0,0,2.26-.42,3.89,3.89,0,0,0,1.41-.91,3.94,3.94,0,0,0,.91-1.4,6.6,6.6,0,0,0,.42-2.27C22,15.64,22,15.26,22,12S22,8.36,21.93,7.07Zm-2.54,8A5.73,5.73,0,0,1,19,16.87,3.86,3.86,0,0,1,16.87,19a5.73,5.73,0,0,1-1.81.35c-.79,0-1,0-3.06,0s-2.27,0-3.06,0A5.73,5.73,0,0,1,7.13,19a3.51,3.51,0,0,1-1.31-.86A3.51,3.51,0,0,1,5,16.87a5.49,5.49,0,0,1-.34-1.81c0-.79,0-1,0-3.06s0-2.27,0-3.06A5.49,5.49,0,0,1,5,7.13a3.51,3.51,0,0,1,.86-1.31A3.59,3.59,0,0,1,7.13,5a5.73,5.73,0,0,1,1.81-.35h0c.79,0,1,0,3.06,0s2.27,0,3.06,0A5.73,5.73,0,0,1,16.87,5a3.51,3.51,0,0,1,1.31.86A3.51,3.51,0,0,1,19,7.13a5.73,5.73,0,0,1,.35,1.81c0,.79,0,1,0,3.06S19.42,14.27,19.39,15.06Zm-1.6-7.44a2.38,2.38,0,0,0-1.41-1.41A4,4,0,0,0,15,6c-.78,0-1,0-3,0s-2.22,0-3,0a4,4,0,0,0-1.38.26A2.38,2.38,0,0,0,6.21,7.62,4.27,4.27,0,0,0,6,9c0,.78,0,1,0,3s0,2.22,0,3a4.27,4.27,0,0,0,.26,1.38,2.38,2.38,0,0,0,1.41,1.41A4.27,4.27,0,0,0,9,18.05H9c.78,0,1,0,3,0s2.22,0,3,0a4,4,0,0,0,1.38-.26,2.38,2.38,0,0,0,1.41-1.41A4,4,0,0,0,18.05,15c0-.78,0-1,0-3s0-2.22,0-3A3.78,3.78,0,0,0,17.79,7.62ZM12,15.82A3.81,3.81,0,0,1,8.19,12h0A3.82,3.82,0,1,1,12,15.82Zm4-6.89a.9.9,0,0,1,0-1.79h0a.9.9,0,0,1,0,1.79Z"/>
+        </symbol>
+        <symbol id="icon-box" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 7.5 12 3l9 4.5-9 4.5-9-4.5z"/>
+                <path d="M3 7.5V17l9 4.5 9-4.5V7.5"/>
+                <path d="M12 12v9.5"/>
+            </g>
+        </symbol>
+        <symbol id="icon-cube" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 7.5 12 3l9 4.5-9 4.5-9-4.5z"/>
+                <path d="M3 7.5V17l9 4.5 9-4.5V7.5"/>
+                <path d="M12 12v9.5"/>
+            </g>
+        </symbol>
+        <symbol id="icon-puzzle" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M18,24H10.437l.291-1.23A8.944,8.944,0,0,0,11,21a2,2,0,0,0-4,0,8.944,8.944,0,0,0,.272,1.77L7.563,24H0V9A3,3,0,0,1,3,6H5.272A9.929,9.929,0,0,1,5,4a4,4,0,0,1,8,0,9.929,9.929,0,0,1-.272,2H15a3,3,0,0,1,3,3v1.772a10.02,10.02,0,0,1,2-.272,4,4,0,0,1,0,8,10.02,10.02,0,0,1-2-.272Zm-5.086-2H16V15.582l1.291.392A11.224,11.224,0,0,0,20,16.5a2,2,0,0,0,0-4,11.224,11.224,0,0,0-2.709.526L16,13.418V9a1,1,0,0,0-1-1H10.082l.392-1.291A11.2,11.2,0,0,0,11,4,2,2,0,0,0,7,4a11.2,11.2,0,0,0,.526,2.709L7.918,8H3A1,1,0,0,0,2,9V22H5.086A7.149,7.149,0,0,1,5,21a4,4,0,0,1,8,0A7.149,7.149,0,0,1,12.914,22Z"/>
+        </symbol>
+        <symbol id="icon-kid" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="7" r="3"/>
+                <path d="M6 21c1.5-4 4-6 6-6s4.5 2 6 6"/>
+                <path d="M9 11c1 .8 2 1.2 3 1.2s2-.4 3-1.2"/>
+            </g>
+        </symbol>
+        <symbol id="icon-handshake" viewBox="0 0 16 16">
+            <path fill="currentColor" d="M13 3c-0.538 0.515-1.185 0.92-1.902 1.178-0.748 0.132-2.818-0.828-3.838 0.152-0.17 0.17-0.38 0.34-0.6 0.51-0.48-0.21-1.22-0.53-1.76-0.84s-1.9-1-1.9-1l-3 3.5s0.74 1 1.2 1.66c0.3 0.44 0.67 1.11 0.91 1.56l-0.34 0.4c-0.058 0.115-0.093 0.25-0.093 0.393 0 0.235 0.092 0.449 0.243 0.607 0.138 0.103 0.311 0.165 0.5 0.165s0.362-0.062 0.502-0.167c-0.094 0.109-0.149 0.249-0.149 0.402 0 0.193 0.088 0.365 0.226 0.479 0.144 0.085 0.317 0.135 0.501 0.135s0.357-0.050 0.505-0.137c-0.112 0.139-0.177 0.313-0.177 0.503s0.065 0.364 0.174 0.502c0.099 0.035 0.214 0.056 0.334 0.056 0.207 0 0.399-0.063 0.558-0.17-0.043 0.095-0.065 0.203-0.065 0.317 0 0.234 0.096 0.445 0.252 0.595 0.13 0.059 0.283 0.093 0.443 0.093 0.226 0 0.437-0.068 0.611-0.185l0.516-0.467c0.472 0.47 1.123 0.761 1.842 0.761 0.020 0 0.041-0 0.061-0.001 0.494-0.042 0.908-0.356 1.094-0.791 0.146 0.056 0.312 0.094 0.488 0.094 0.236 0 0.455-0.068 0.64-0.185 0.585-0.387 0.445-0.687 0.445-0.687 0.125 0.055 0.27 0.087 0.423 0.087 0.321 0 0.61-0.142 0.806-0.366 0.176-0.181 0.283-0.427 0.283-0.697 0-0.19-0.053-0.367-0.145-0.518 0.008 0.005 0.015 0.005 0.021 0.005 0.421 0 0.787-0.232 0.978-0.574 0.068-0.171 0.105-0.363 0.105-0.563 0-0.342-0.11-0.659-0.296-0.917l0.003 0.005c0.82-0.16 0.79-0.57 1.19-1.17 0.384-0.494 0.852-0.902 1.387-1.208zM12.95 10.060c-0.44 0.44-0.78 0.25-1.53-0.32s-2.24-1.64-2.24-1.64c0.061 0.305 0.202 0.57 0.401 0.781 0.319 0.359 1.269 1.179 1.719 1.599 0.28 0.26 1 0.78 0.58 1.18s-0.75 0-1.44-0.56-2.23-1.94-2.23-1.94c-0.001 0.018-0.002 0.038-0.002 0.059 0 0.258 0.104 0.491 0.272 0.661 0.17 0.2 1.12 1.12 1.52 1.54s0.75 0.67 0.41 1-1.030-0.19-1.41-0.58c-0.59-0.57-1.76-1.63-1.76-1.63-0.001 0.016-0.001 0.034-0.001 0.053 0 0.284 0.098 0.544 0.263 0.75 0.288 0.378 0.848 0.868 1.188 1.248s0.54 0.7 0 1-1.34-0.44-1.69-0.8c0-0.001 0-0.001 0-0.002 0-0.103-0.038-0.197-0.1-0.269-0.159-0.147-0.374-0.238-0.609-0.238-0.104 0-0.204 0.018-0.297 0.050 0.128-0.114 0.204-0.274 0.204-0.452s-0.076-0.338-0.198-0.45c-0.126-0.095-0.284-0.152-0.455-0.152s-0.33 0.057-0.457 0.153c0.117-0.113 0.189-0.268 0.189-0.441 0-0.213-0.109-0.4-0.274-0.509-0.153-0.097-0.336-0.153-0.532-0.153-0.244 0-0.468 0.088-0.642 0.233 0.095-0.114 0.151-0.26 0.151-0.42 0-0.195-0.085-0.37-0.219-0.491-0.178-0.165-0.417-0.266-0.679-0.266-0.185 0-0.358 0.050-0.507 0.138l-0.665-1.123c-0.46-0.73-1-1.49-1-1.49l2.28-2.77s0.81 0.5 1.48 0.88c0.33 0.19 0.9 0.44 1.33 0.64-0.68 0.51-1.25 1-1.080 1.34 0.297 0.214 0.668 0.343 1.069 0.343 0.376 0 0.726-0.113 1.018-0.307 0.373-0.251 0.84-0.403 1.343-0.403 0.347 0 0.677 0.072 0.976 0.203 0.554 0.374 1.574 1.294 2.504 1.874v0c1.17 0.85 1.4 1.4 1.12 1.68z"/>
+        </symbol>
+        <symbol id="icon-sprout" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20v-8"/>
+                <path d="M12 12c-3-1-5-3-5-6 3 0 5 2 6 5"/>
+                <path d="M12 12c3-1 5-3 5-6-3 0-5 2-6 5"/>
+            </g>
+        </symbol>
+        <symbol id="icon-laptop" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="5" width="16" height="10" rx="1.5"/>
+                <path d="M2 19h20"/>
+                <path d="M8 19h8"/>
+            </g>
+        </symbol>
+        <symbol id="icon-layers" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 7l8-4 8 4-8 4-8-4z"/>
+                <path d="M4 12l8 4 8-4"/>
+                <path d="M4 16l8 4 8-4"/>
+            </g>
+        </symbol>
+        <symbol id="icon-sparkle" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3l1.8 4.6L18 9l-4.2 1.4L12 15l-1.8-4.6L6 9l4.2-1.4z"/>
+                <path d="M5 19l.8 2 .8-2 2-.8-2-.8-.8-2-.8 2-2 .8z"/>
+            </g>
+        </symbol>
+        <symbol id="icon-ruler" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 20L20 4l0 16z"/>
+                <path d="M8 20v-3"/>
+                <path d="M12 20v-6"/>
+                <path d="M16 20v-9"/>
+            </g>
+        </symbol>
+        <symbol id="icon-gear" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 2v3"/>
+                <path d="M12 19v3"/>
+                <path d="M4.9 4.9l2.1 2.1"/>
+                <path d="M17 17l2.1 2.1"/>
+                <path d="M2 12h3"/>
+                <path d="M19 12h3"/>
+                <path d="M4.9 19.1l2.1-2.1"/>
+                <path d="M17 7l2.1-2.1"/>
+            </g>
+        </symbol>
+        <symbol id="icon-robot" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="7" width="14" height="10" rx="2"/>
+                <circle cx="9" cy="12" r="1"/>
+                <circle cx="15" cy="12" r="1"/>
+                <path d="M9 16h6"/>
+                <path d="M12 4v3"/>
+                <circle cx="12" cy="3" r="1" fill="currentColor" stroke="none"/>
+            </g>
+        </symbol>
+        <symbol id="icon-swirl" viewBox="0 -1 26 26">
+            <path fill="currentColor" d="m11.87.12c-.909.245-1.674.761-2.226 1.454l-.007.009c-.538.687-.863 1.563-.863 2.515 0 1.101.434 2.101 1.141 2.837l-.001-.001c.306.238.512.591.553.993v.006c.072.395.113.851.113 1.315s-.041.92-.12 1.362l.007-.047c-.465 2.204-2.013 3.963-4.048 4.717l-.044.014-.632.24-.48-.133c-.339-.104-.73-.164-1.134-.164-.667 0-1.295.163-1.848.451l.022-.011c-1.373.685-2.3 2.079-2.3 3.69 0 1.582.894 2.956 2.205 3.643l.023.011c.545.285 1.191.453 1.876.453 1.912 0 3.52-1.305 3.98-3.073l.006-.029c.12-.494.222-.626.897-1.131.62-.45 1.34-.813 2.115-1.052l.052-.014c.516-.143 1.109-.225 1.72-.225 1.734 0 3.314.659 4.503 1.74l-.005-.005c.207.162.346.403.372.676v.004c.178.736.559 1.366 1.081 1.846l.003.002c.284.318.626.577 1.01.762l.019.008c.494.268 1.082.425 1.707.425.118 0 .234-.006.348-.016l-.015.001c.404 0 .793-.066 1.157-.188l-.026.007c1.343-.475 2.355-1.58 2.691-2.951l.006-.029c.055-.282.087-.606.087-.937 0-.343-.034-.679-.099-1.003l.005.032c-.385-1.386-1.425-2.466-2.757-2.899l-.03-.008c-.364-.105-.782-.165-1.215-.165-.364 0-.717.043-1.056.123l.031-.006c-.163.066-.352.104-.55.104-.276 0-.535-.074-.757-.204l.007.004c-2.477-.935-4.206-3.286-4.206-6.041 0-.435.043-.86.125-1.271l-.007.041.108-.566.4-.427c.699-.688 1.146-1.63 1.192-2.676v-.008c.004-.069.006-.149.006-.231 0-1.908-1.302-3.511-3.066-3.97l-.029-.006c-.307-.075-.66-.117-1.023-.117-.364 0-.718.043-1.058.124l.031-.006zm1.76 2.546c.53.271.886.813.886 1.439 0 .447-.182.852-.476 1.144-.244.275-.599.448-.994.448-.053 0-.105-.003-.157-.009l.006.001c-.045.005-.097.009-.15.009-.395 0-.749-.173-.992-.446l-.001-.001c-.298-.278-.484-.674-.484-1.112 0-.111.012-.22.035-.324l-.002.01c.141-.765.802-1.336 1.597-1.336.269 0 .522.065.746.181l-.009-.004zm.337 9.39c.514.251.92.658 1.162 1.159l.006.015c.116.227.184.495.184.778 0 .08-.005.159-.016.236l.001-.009c.009.069.015.149.015.23 0 .308-.077.597-.212.851l.005-.01c-.347.715-1.01 1.229-1.803 1.364l-.015.002c-.114.019-.246.029-.38.029-.982 0-1.831-.571-2.232-1.398l-.006-.015c-.127-.238-.202-.52-.202-.82 0-.082.006-.163.017-.243l-.001.009c-.01-.069-.015-.149-.015-.231 0-.277.065-.539.18-.772l-.005.01c.293-.621.813-1.094 1.451-1.319l.018-.005c.199-.072.429-.113.669-.113.074 0 .148.004.22.012l-.009-.001c.02-.001.043-.001.067-.001.333 0 .646.089.915.244l-.009-.005zm-9.394 5.698c.443.137.8.441 1.004.837l.004.009c.119.177.189.395.189.629 0 .065-.005.128-.016.19l.001-.007c-.018.648-.425 1.196-.994 1.423l-.011.004c-.176.063-.38.1-.592.1-.298 0-.579-.072-.827-.201l.01.005c-.489-.28-.814-.799-.814-1.394 0-.054.003-.108.008-.16l-.001.007c.022-.388.193-.733.457-.98l.001-.001c.284-.32.696-.521 1.156-.521.151 0 .297.022.435.062l-.011-.003zm17.696.06c.398.175.718.467.922.833l.005.01c.076.195.12.421.12.657 0 .27-.057.526-.161.757l.005-.012c-.257.528-.789.885-1.405.885-.014 0-.028 0-.042-.001h.002c-.016.001-.034.001-.052.001-.851 0-1.543-.681-1.56-1.528v-.002c-.009-.054-.015-.117-.015-.181 0-.238.073-.459.198-.641l-.003.004c.254-.533.789-.895 1.408-.895.209 0 .409.041.591.116l-.01-.004z"/>
+            <path fill="currentColor" d="m5.062 6.082c-.983 1.122-1.744 2.466-2.195 3.944l-.02.076c-.217.789-.234 1.006-.03.4.319-.864.67-1.598 1.077-2.295l-.037.068c.399-.627.823-1.172 1.294-1.673l-.006.006c.163-.155.308-.327.432-.513l.007-.011c-.04-.114-.127-.204-.237-.246l-.003-.001c-.11.066-.203.147-.28.243z"/>
+            <path fill="currentColor" d="m20.742 6.498c.941 1.143 1.644 2.517 2.014 4.023l.015.07c.205.88.24.96.386.96.234 0 .259-.193.09-.765-.495-1.685-1.344-3.136-2.466-4.325l.005.005-.4-.422z"/>
+            <path fill="currentColor" d="m5.449 7.293c-.582.761-1.056 1.643-1.378 2.596l-.019.064c-.259.789-.325 1.168-.096.572.426-1.086 1-2.02 1.708-2.835l-.01.012c.301-.349.349-.463.222-.59s-.21-.085-.427.18z"/>
+            <path fill="currentColor" d="m20.273 7.642c.659.947 1.166 2.056 1.455 3.25l.014.067c.036.169.16.253.301.198.15-.06.16-.193.012-.608-.454-1.245-1.119-2.313-1.961-3.213l.005.005c-.102-.114-.024.018.174.301z"/>
+            <path fill="currentColor" d="m5.653 8.598c-.321.554-.591 1.194-.775 1.869l-.013.057c.083-.114.165-.245.237-.382l.009-.018c.212-.368.424-.682.654-.979l-.014.019c.295-.4.379-.548.337-.62-.11-.163-.296-.139-.434.054z"/>
+            <path fill="currentColor" d="m20.002 8.93c.146.285.293.631.416.988l.018.059c.193.584.331.72.512.494.108-.133.108-.145-.08-.475-.315-.53-.632-.984-.978-1.413l.018.023c-.158-.193-.152-.162.094.325z"/>
+            <path fill="currentColor" d="m11.486 21.72c-.017.025-.028.056-.028.09 0 .055.028.103.07.132h.001c.09.09.198.096.981.06.48-.018.969-.054 1.083-.08.198-.036.205-.042.06-.084-.143-.028-.309-.046-.478-.048h-.002c-.181-.006-.572-.048-.873-.096-.703-.113-.735-.113-.814.026z"/>
+            <path fill="currentColor" d="m10.42 22.364c-.102.042-.102.234 0 .313.557.159 1.197.251 1.858.251.176 0 .351-.007.524-.019l-.023.001c.694-.007 1.363-.099 2.001-.265l-.057.013c-.013 0-.029 0-.045 0-.224 0-.444.013-.661.039l.026-.003c-.195.014-.422.022-.65.022-.723 0-1.427-.078-2.105-.226l.065.012c-.686-.15-.837-.178-.933-.136z"/>
+            <path fill="currentColor" d="m9.403 23.261c-.072.181.06.295.463.4.803.214 1.726.337 2.677.337.751 0 1.485-.077 2.193-.223l-.07.012c.62-.12.602-.174-.03-.08-.384.048-.829.075-1.281.075-1.061 0-2.088-.15-3.059-.431l.078.019c-.741-.218-.923-.242-.971-.11z"/>
+        </symbol>
+        <symbol id="icon-building" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="3" width="16" height="18" rx="1.5"/>
+                <path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2"/>
+                <path d="M11 21v-3h2v3"/>
+            </g>
+        </symbol>
+        <symbol id="icon-statue" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="6.5" r="2.5"/>
+                <path d="M8 12h8l-1 4H9z"/>
+                <rect x="8" y="16" width="8" height="4" rx="1"/>
+            </g>
+        </symbol>
+        <symbol id="icon-gift" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="9" width="16" height="11" rx="2"/>
+                <path d="M4 12h16"/>
+                <path d="M12 9v11"/>
+                <path d="M8 9c-1.5 0-2.5-1-2.5-2.2 0-1.1.9-2 2-2 1.8 0 3 1.4 3.5 4.2"/>
+                <path d="M16 9c1.5 0 2.5-1 2.5-2.2 0-1.1-.9-2-2-2-1.8 0-3 1.4-3.5 4.2"/>
+            </g>
+        </symbol>
+        <symbol id="icon-plant" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 20h10l-1-4H8z"/>
+                <path d="M12 16v-6"/>
+                <path d="M12 12c-3-1-5-3-5-6 3 0 5 2 5 6z"/>
+                <path d="M12 12c3-1 5-3 5-6-3 0-5 2-5 6z"/>
+            </g>
+        </symbol>
+        <symbol id="icon-lightbulb" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 14c-1.3-1-2-2.5-2-4a6 6 0 1 1 12 0c0 1.5-.7 3-2 4"/>
+                <path d="M9 18h6"/>
+                <path d="M10 21h4"/>
+                <path d="M9 14h6"/>
+            </g>
+        </symbol>
+        <symbol id="icon-arrow-up" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19V5"/>
+                <path d="M7 10l5-5 5 5"/>
+            </g>
+        </symbol>
+        <symbol id="icon-arrow-down" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5v14"/>
+                <path d="M7 14l5 5 5-5"/>
+            </g>
+        </symbol>
+    </svg>
 
     <!-- Chosen Palette: Warm Neutrals & Calming Blues (Background: #FAF9F6 Off-white, Primary: #3B82F6 Blue, Accent: #8B5CF6 Violet, Text: #334155 Slate) -->
     <!-- Application Structure Plan: The SPA is structured as a storytelling landing page. It flows from the emotional core (Hero & Purpose) to the educational (What is 3D printing), then the practical (Products/Portfolio), and finally the concrete impact (Chart showing fund allocation). This non-linear exploration allows users to understand the "Why" before the "What", creating a stronger connection to the brand and its mission to help Cauã. Interactive tabs and step-by-step processes keep the user engaged without overwhelming them with text. -->
@@ -88,11 +250,14 @@
                     <a href="#proposito" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Nosso Propósito</a>
                     <a href="#tecnologia" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">A Tecnologia</a>
                     <a href="#produtos" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">O que Fazemos</a>
-                    <!-- <a href="#assistente-ia" class="text-blue-600 hover:text-blue-800 font-bold transition-colors flex items-center gap-1">Ideias <span>✨</span></a> -->
+                    <!-- <a href="#assistente-ia" class="text-blue-600 hover:text-blue-800 font-bold transition-colors flex items-center gap-1">Ideias <svg class="icon w-4 h-4" aria-hidden="true" focusable="false"><use href="#icon-sparkle"></use></svg></a> -->
                     <a href="#impacto" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">O Impacto</a>
                 </div>
-                <a href="https://www.instagram.com/spectrum_impressoes3d" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full font-semibold transition-all shadow-md hover:shadow-lg text-sm">
-                    Siga no Instagram 📱
+                <a href="https://www.instagram.com/spectrum_impressoes3d" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full font-semibold transition-all shadow-md hover:shadow-lg text-sm inline-flex items-center gap-2">
+                    Siga no Instagram
+                    <svg class="icon w-4 h-4" aria-hidden="true" focusable="false">
+                        <use href="#icon-phone"></use>
+                    </svg>
                 </a>
             </div>
         </div>
@@ -102,8 +267,11 @@
         <section class="pt-20 pb-16 md:pt-32 md:pb-24 px-4 overflow-hidden relative">
             <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-50 to-purple-50 -z-10 opacity-70"></div>
             <div class="max-w-4xl mx-auto text-center">
-                <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-4 border border-blue-200">
-                    Tecnologia com Alma 💖
+                <span class="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-4 border border-blue-200">
+                    Tecnologia com Alma
+                    <svg class="icon w-4 h-4" aria-hidden="true" focusable="false">
+                        <use href="#icon-heart"></use>
+                    </svg>
                 </span>
                 <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                     Materializando ideias, <br/>
@@ -113,11 +281,17 @@
                     Bem-vindo à Spectrum. Produzimos itens personalizados em impressão 3D com um propósito maior: apoiar o desenvolvimento do Cauã e espalhar conscientização.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <button onclick="document.getElementById('produtos').scrollIntoView()" class="bg-slate-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-slate-700 transition-colors shadow-lg">
-                        Veja nossas categorias de peças feitas 📦
+                    <button onclick="document.getElementById('produtos').scrollIntoView()" class="bg-slate-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-slate-700 transition-colors shadow-lg inline-flex items-center justify-center gap-2">
+                        Veja nossas categorias de peças feitas
+                        <svg class="icon w-5 h-5" aria-hidden="true" focusable="false">
+                            <use href="#icon-box"></use>
+                        </svg>
                     </button>
-                    <button onclick="document.getElementById('proposito').scrollIntoView()" class="bg-white border-2 border-slate-200 text-slate-700 px-8 py-3 rounded-full font-semibold hover:border-blue-300 hover:bg-blue-50 transition-all shadow-sm">
-                        Conheça o Cauã 🧩
+                    <button onclick="document.getElementById('proposito').scrollIntoView()" class="bg-white border-2 border-slate-200 text-slate-700 px-8 py-3 rounded-full font-semibold hover:border-blue-300 hover:bg-blue-50 transition-all shadow-sm inline-flex items-center justify-center gap-2">
+                        Conheça o Cauã
+                        <svg class="icon w-5 h-5" aria-hidden="true" focusable="false">
+                            <use href="#icon-puzzle"></use>
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -132,13 +306,23 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div class="bg-blue-50 p-8 rounded-3xl border border-blue-100 relative shadow-sm">
-                        <div class="text-6xl mb-4 text-center">👦🏻🧩</div>
+                        <div class="flex justify-center gap-3 mb-4 text-slate-700">
+                            <svg class="icon w-16 h-16" aria-hidden="true" focusable="false">
+                                <use href="#icon-kid"></use>
+                            </svg>
+                            <svg class="icon w-16 h-16" aria-hidden="true" focusable="false">
+                                <use href="#icon-puzzle"></use>
+                            </svg>
+                        </div>
                         <h3 class="text-2xl font-bold text-slate-800 mb-4 text-center">Pelo Cauã</h3>
                         <p class="text-slate-700 leading-relaxed mb-6">
                             Parte da renda de cada peça produzida pela Spectrum é destinada a auxiliar no tratamento do Cauã, um menino incrível diagnosticado com Transtorno do Espectro Autista (TEA) nível de suporte 2. 
                         </p>
-                        <button id="toggle-autism-info" class="w-full bg-white border border-blue-200 text-blue-700 py-2 rounded-xl font-medium hover:bg-blue-100 transition-colors">
-                            Como a impressão 3D ajuda no TEA? 👇
+                        <button id="toggle-autism-info" class="w-full bg-white border border-blue-200 text-blue-700 py-2 rounded-xl font-medium hover:bg-blue-100 transition-colors inline-flex items-center justify-center gap-2">
+                            <span>Como a impressão 3D ajuda no TEA?</span>
+                            <svg class="icon w-4 h-4" aria-hidden="true" focusable="false">
+                                <use href="#icon-arrow-down"></use>
+                            </svg>
                         </button>
                         <div id="autism-extra-info" class="hidden mt-4 p-4 bg-white rounded-xl border border-blue-100 text-sm text-slate-600 leading-relaxed">
                             Muitas pessoas no espectro possuem necessidades sensoriais específicas. A impressão 3D nos permite criar brinquedos (fidget toys) com texturas customizadas, ferramentas de regulação emocional e materiais de apoio visual que são caros ou difíceis de encontrar no mercado tradicional. Ao comprar conosco, você ajuda a custear as terapias essenciais dele.
@@ -147,14 +331,22 @@
 
                     <div class="space-y-6">
                         <div class="flex gap-4 items-start">
-                            <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center text-2xl shrink-0">🤝</div>
+                            <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center text-purple-700 shrink-0">
+                                <svg class="icon w-6 h-6" aria-hidden="true" focusable="false">
+                                    <use href="#icon-handshake"></use>
+                                </svg>
+                            </div>
                             <div>
                                 <h4 class="font-bold text-xl text-slate-800">Personalização Empática</h4>
                                 <p class="text-slate-600 mt-1">Criamos produtos que se adaptam às necessidades do cliente, não o contrário.</p>
                             </div>
                         </div>
                         <div class="flex gap-4 items-start">
-                            <div class="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center text-2xl shrink-0">🌱</div>
+                            <div class="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center text-orange-700 shrink-0">
+                                <svg class="icon w-6 h-6" aria-hidden="true" focusable="false">
+                                    <use href="#icon-sprout"></use>
+                                </svg>
+                            </div>
                             <div>
                                 <h4 class="font-bold text-xl text-slate-800">Impacto Direto</h4>
                                 <p class="text-slate-600 mt-1">Sua compra tem um destino transparente e um impacto imediato na qualidade de vida de uma criança.</p>
@@ -175,18 +367,37 @@
                 <div class="bg-white rounded-3xl p-6 md:p-10 shadow-sm border border-slate-100">
                     <div class="flex flex-col md:flex-row justify-between mb-8 gap-4 border-b border-slate-100 pb-6">
                         <button class="tech-step-btn flex-1 py-3 px-4 rounded-xl text-center font-bold bg-blue-100 text-blue-700 transition-colors" data-step="1">
-                            1. Modelagem 💻
+                            <span class="inline-flex items-center justify-center gap-2 w-full">
+                                1. Modelagem
+                                <svg class="icon w-5 h-5" aria-hidden="true" focusable="false">
+                                    <use href="#icon-laptop"></use>
+                                </svg>
+                            </span>
                         </button>
                         <button class="tech-step-btn flex-1 py-3 px-4 rounded-xl text-center font-bold bg-slate-100 text-slate-500 hover:bg-slate-200 transition-colors" data-step="2">
-                            2. Fatiamento 🍰
+                            <span class="inline-flex items-center justify-center gap-2 w-full">
+                                2. Fatiamento
+                                <svg class="icon w-5 h-5" aria-hidden="true" focusable="false">
+                                    <use href="#icon-layers"></use>
+                                </svg>
+                            </span>
                         </button>
                         <button class="tech-step-btn flex-1 py-3 px-4 rounded-xl text-center font-bold bg-slate-100 text-slate-500 hover:bg-slate-200 transition-colors" data-step="3">
-                            3. Impressão 🪄
+                            <span class="inline-flex items-center justify-center gap-2 w-full">
+                                3. Impressão
+                                <svg class="icon w-5 h-5" aria-hidden="true" focusable="false">
+                                    <use href="#icon-sparkle"></use>
+                                </svg>
+                            </span>
                         </button>
                     </div>
 
                     <div id="step-1" class="step-content active text-center py-4">
-                        <div class="text-7xl mb-6">📐</div>
+                        <div class="flex justify-center mb-6 text-slate-700">
+                            <svg class="icon w-20 h-20" aria-hidden="true" focusable="false">
+                                <use href="#icon-ruler"></use>
+                            </svg>
+                        </div>
                         <h3 class="text-2xl font-bold text-slate-800 mb-3">O Design Digital</h3>
                         <p class="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
                             Tudo começa com uma ideia. Utilizando softwares de desenho 3D, criamos um modelo digital do objeto. Seja a logo de uma empresa, um personagem de RPG ou uma engrenagem sensorial, este é o momento de definir proporções e detalhes.
@@ -194,7 +405,11 @@
                     </div>
                     
                     <div id="step-2" class="step-content text-center py-4">
-                        <div class="text-7xl mb-6">⚙️</div>
+                        <div class="flex justify-center mb-6 text-slate-700">
+                            <svg class="icon w-20 h-20" aria-hidden="true" focusable="false">
+                                <use href="#icon-gear"></use>
+                            </svg>
+                        </div>
                         <h3 class="text-2xl font-bold text-slate-800 mb-3">Preparando as Camadas</h3>
                         <p class="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
                             O modelo 3D passa por um software "fatiador" (slicer). Ele literalmente corta o objeto digital em centenas de camadas horizontais finíssimas e gera um código matemático dizendo à impressora exatamente por onde se mover e quanto material soltar.
@@ -202,7 +417,11 @@
                     </div>
 
                     <div id="step-3" class="step-content text-center py-4">
-                        <div class="text-7xl mb-6">🤖</div>
+                        <div class="flex justify-center mb-6 text-slate-700">
+                            <svg class="icon w-20 h-20" aria-hidden="true" focusable="false">
+                                <use href="#icon-robot"></use>
+                            </svg>
+                        </div>
                         <h3 class="text-2xl font-bold text-slate-800 mb-3">Materializando</h3>
                         <p class="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
                             A impressora aquece um filamento de plástico biodegradável (como o PLA) até ele derreter. O bico extrusor desenha a primeira camada na base. Quando esfria e endurece, a impressora sobe uma fração de milímetro e faz a próxima camada, até o objeto estar completo.
@@ -233,8 +452,10 @@
                     
                     <!-- Item 1: Sensory -->
                     <div class="product-card bg-slate-50 rounded-2xl p-6 border border-slate-100 flex flex-col items-center text-center item" data-category="sensory">
-                        <div class="w-32 h-32 rounded-full bg-teal-100 flex items-center justify-center text-5xl mb-6 border-4 border-white shadow-inner">
-                            🌀
+                        <div class="w-32 h-32 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 mb-6 border-4 border-white shadow-inner">
+                            <svg class="icon w-12 h-12" aria-hidden="true" focusable="false">
+                                <use href="#icon-swirl"></use>
+                            </svg>
                         </div>
                         <h4 class="font-bold text-xl text-slate-800 mb-2">Fidgets e Peças Táteis</h4>
                         <p class="text-slate-600 text-sm mb-4 flex-grow">Projetos pensados para foco e regulação sensorial, com diferentes texturas, formas e movimentos.</p>
@@ -243,8 +464,10 @@
 
                     <!-- Item 2: Corporate -->
                     <div class="product-card bg-slate-50 rounded-2xl p-6 border border-slate-100 flex flex-col items-center text-center item" data-category="corporate">
-                        <div class="w-32 h-32 rounded-full bg-blue-100 flex items-center justify-center text-5xl mb-6 border-4 border-white shadow-inner">
-                            🏢
+                        <div class="w-32 h-32 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 mb-6 border-4 border-white shadow-inner">
+                            <svg class="icon w-12 h-12" aria-hidden="true" focusable="false">
+                                <use href="#icon-building"></use>
+                            </svg>
                         </div>
                         <h4 class="font-bold text-xl text-slate-800 mb-2">Identidade de Marca</h4>
                         <p class="text-slate-600 text-sm mb-4 flex-grow">Logotipos, letreiros e peças de apresentação para recepções, eventos e espaços corporativos.</p>
@@ -253,8 +476,10 @@
 
                     <!-- Item 3: Decor -->
                     <div class="product-card bg-slate-50 rounded-2xl p-6 border border-slate-100 flex flex-col items-center text-center item" data-category="decor">
-                        <div class="w-32 h-32 rounded-full bg-orange-100 flex items-center justify-center text-5xl mb-6 border-4 border-white shadow-inner">
-                            🗿
+                        <div class="w-32 h-32 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 mb-6 border-4 border-white shadow-inner">
+                            <svg class="icon w-12 h-12" aria-hidden="true" focusable="false">
+                                <use href="#icon-statue"></use>
+                            </svg>
                         </div>
                         <h4 class="font-bold text-xl text-slate-800 mb-2">Esculturas e Arte</h4>
                         <p class="text-slate-600 text-sm mb-4 flex-grow">Peças decorativas, personagens e itens temáticos com acabamento moderno e design autoral.</p>
@@ -263,8 +488,10 @@
 
                     <!-- Item 4: Sensory -->
                     <div class="product-card bg-slate-50 rounded-2xl p-6 border border-slate-100 flex flex-col items-center text-center item" data-category="sensory">
-                        <div class="w-32 h-32 rounded-full bg-teal-100 flex items-center justify-center text-5xl mb-6 border-4 border-white shadow-inner">
-                            🧊
+                        <div class="w-32 h-32 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 mb-6 border-4 border-white shadow-inner">
+                            <svg class="icon w-12 h-12" aria-hidden="true" focusable="false">
+                                <use href="#icon-cube"></use>
+                            </svg>
                         </div>
                         <h4 class="font-bold text-xl text-slate-800 mb-2">Jogos de Encaixe e Motricidade</h4>
                         <p class="text-slate-600 text-sm mb-4 flex-grow">Peças articuladas e brinquedos educativos para coordenação motora fina e estímulo cognitivo.</p>
@@ -273,8 +500,10 @@
 
                     <!-- Item 5: Corporate -->
                     <div class="product-card bg-slate-50 rounded-2xl p-6 border border-slate-100 flex flex-col items-center text-center item" data-category="corporate">
-                        <div class="w-32 h-32 rounded-full bg-blue-100 flex items-center justify-center text-5xl mb-6 border-4 border-white shadow-inner">
-                            🎁
+                        <div class="w-32 h-32 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 mb-6 border-4 border-white shadow-inner">
+                            <svg class="icon w-12 h-12" aria-hidden="true" focusable="false">
+                                <use href="#icon-gift"></use>
+                            </svg>
                         </div>
                         <h4 class="font-bold text-xl text-slate-800 mb-2">Brindes e Utilitários</h4>
                         <p class="text-slate-600 text-sm mb-4 flex-grow">Chaveiros, suportes e itens funcionais com personalização sob medida para eventos e equipes.</p>
@@ -283,8 +512,10 @@
 
                      <!-- Item 6: Decor -->
                      <div class="product-card bg-slate-50 rounded-2xl p-6 border border-slate-100 flex flex-col items-center text-center item" data-category="decor">
-                        <div class="w-32 h-32 rounded-full bg-orange-100 flex items-center justify-center text-5xl mb-6 border-4 border-white shadow-inner">
-                            🪴
+                        <div class="w-32 h-32 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 mb-6 border-4 border-white shadow-inner">
+                            <svg class="icon w-12 h-12" aria-hidden="true" focusable="false">
+                                <use href="#icon-plant"></use>
+                            </svg>
                         </div>
                         <h4 class="font-bold text-xl text-slate-800 mb-2">Vasos e Acessórios</h4>
                         <p class="text-slate-600 text-sm mb-4 flex-grow">Peças de decoração e presentes personalizados para casas, escritórios e datas especiais.</p>
@@ -299,7 +530,11 @@
         <!-- <section id="assistente-ia" class="py-16 md:py-24 bg-blue-50 relative overflow-hidden">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-blue-100 text-center">
-                    <div class="inline-block p-4 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl text-4xl mb-6 shadow-inner">✨</div>
+                    <div class="inline-block p-4 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl mb-6 shadow-inner text-blue-700">
+                        <svg class="icon w-10 h-10" aria-hidden="true" focusable="false">
+                            <use href="#icon-sparkle"></use>
+                        </svg>
+                    </div>
                     <h2 class="text-3xl font-bold text-slate-800 mb-4">Laboratório de Ideias Inclusivas</h2>
                     <p class="text-slate-600 mb-8 text-lg max-w-2xl mx-auto">Não encontrou o que procurava? Descreva os interesses e necessidades sensoriais de quem você quer presentear, e nossa IA desenhará um conceito de brinquedo 3D personalizado!</p>
                     
@@ -308,16 +543,26 @@
                         <textarea id="ia-input" rows="3" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:ring-0 focus:border-blue-500 outline-none transition-all resize-none mb-4" placeholder="Digite aqui..."></textarea>
                         
                         <button id="btn-gerar-ideia" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-4 px-6 rounded-xl shadow-md hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all flex justify-center items-center gap-3 transform hover:-translate-y-1">
-                            <span class="text-lg">Gerar Ideia Personalizada ✨</span>
+                            <span class="text-lg inline-flex items-center gap-2">Gerar Ideia Personalizada <svg class="icon w-5 h-5" aria-hidden="true" focusable="false"><use href="#icon-sparkle"></use></svg></span>
                             <svg id="ia-loading" class="animate-spin h-6 w-6 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
                         </button>
                         
                         <div id="ia-result-container" class="mt-8 p-6 bg-blue-50/50 border border-blue-100 rounded-xl hidden">
-                            <h4 class="font-bold text-xl text-blue-900 mb-4 flex items-center gap-2">💡 Nossa Sugestão 3D:</h4>
+                            <h4 class="font-bold text-xl text-blue-900 mb-4 flex items-center gap-2">
+                                <svg class="icon w-5 h-5" aria-hidden="true" focusable="false">
+                                    <use href="#icon-lightbulb"></use>
+                                </svg>
+                                Nossa Sugestão 3D:
+                            </h4>
                             <div id="ia-result-text" class="text-slate-700 space-y-3 leading-relaxed"></div>
                             <div class="mt-6 pt-4 border-t border-blue-200 text-center md:text-left">
                                 <p class="text-sm text-slate-600 mb-3 font-medium">Gostou da ideia? Mande uma mensagem para criarmos juntos!</p>
-                                <a href="https://www.instagram.com/spectrum_impressoes3d" target="_blank" class="inline-block bg-slate-800 text-white px-6 py-2 rounded-lg text-sm font-bold hover:bg-slate-700 transition-colors">Falar no Instagram 📱</a>
+                                <a href="https://www.instagram.com/spectrum_impressoes3d" target="_blank" class="inline-block bg-slate-800 text-white px-6 py-2 rounded-lg text-sm font-bold hover:bg-slate-700 transition-colors inline-flex items-center gap-2">
+                                    Falar no Instagram
+                                    <svg class="icon w-4 h-4" aria-hidden="true" focusable="false">
+                                        <use href="#icon-phone"></use>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                         <div id="ia-error" class="mt-4 p-4 bg-red-50 text-red-700 border border-red-200 rounded-xl hidden text-sm font-medium">
@@ -392,7 +637,10 @@
 
             <div class="flex gap-4">
                 <a href="https://www.instagram.com/spectrum_impressoes3d" target="_blank" class="hover:text-white transition-colors flex items-center gap-2 bg-slate-800 px-4 py-2 rounded-lg">
-                    <span>📱</span> Instagram Oficial
+                    <svg class="icon w-4 h-4" aria-hidden="true" focusable="false">
+                        <use href="#icon-phone"></use>
+                    </svg>
+                    Instagram Oficial
                 </a>
             </div>
         </div>
@@ -404,15 +652,20 @@
             // 1. Toggle Purpose Info
             const toggleBtn = document.getElementById('toggle-autism-info');
             const infoBox = document.getElementById('autism-extra-info');
+
+            const toggleLabelShow = `<span>Como a impressão 3D ajuda no TEA?</span><svg class="icon w-4 h-4" aria-hidden="true" focusable="false"><use href="#icon-arrow-down"></use></svg>`;
+            const toggleLabelHide = `<span>Ocultar detalhes</span><svg class="icon w-4 h-4" aria-hidden="true" focusable="false"><use href="#icon-arrow-up"></use></svg>`;
+
+            toggleBtn.innerHTML = toggleLabelShow;
             
             toggleBtn.addEventListener('click', () => {
                 if (infoBox.classList.contains('hidden')) {
                     infoBox.classList.remove('hidden');
-                    toggleBtn.innerHTML = 'Ocultar detalhes 👆';
+                    toggleBtn.innerHTML = toggleLabelHide;
                     toggleBtn.classList.replace('bg-white', 'bg-blue-100');
                 } else {
                     infoBox.classList.add('hidden');
-                    toggleBtn.innerHTML = 'Como a impressão 3D ajuda no TEA? 👇';
+                    toggleBtn.innerHTML = toggleLabelShow;
                     toggleBtn.classList.replace('bg-blue-100', 'bg-white');
                 }
             });
